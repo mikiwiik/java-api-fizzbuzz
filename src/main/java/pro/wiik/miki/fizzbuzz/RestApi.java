@@ -11,7 +11,7 @@ import java.math.BigInteger;
 
 @Controller
 @RequestMapping("/")
-public class HelloController {
+public class RestApi {
 
     @Autowired
     FizzBuzzer fizzBuzzer;
