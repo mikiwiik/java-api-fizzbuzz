@@ -1,4 +1,4 @@
-package com.springapp.mvc;
+package pro.wiik.miki.fizzbuzz;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

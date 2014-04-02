@@ -1,4 +1,4 @@
-package com.springapp.mvc;
+package pro.wiik.miki.fizzbuzz;
 
 import org.junit.Before;
 import org.junit.Test;
