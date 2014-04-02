@@ -36,4 +36,11 @@ public class RestApiTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("fizz buzz"));
     }
+
+    @Test
+    public void testLargeNumber() throws Exception {
+        mockMvc.perform(get("/1234567890987654321"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("fizz"));
+    }
 }
