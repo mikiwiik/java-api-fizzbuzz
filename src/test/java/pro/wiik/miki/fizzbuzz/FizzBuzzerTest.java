@@ -1,5 +1,6 @@
 package pro.wiik.miki.fizzbuzz;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static java.math.BigInteger.valueOf;
@@ -19,6 +20,19 @@ public class FizzBuzzerTest {
 
         assertThat("Should support numbers larger than int max val",
                 fizzBuzzer.evaluate(valueOf(Integer.MAX_VALUE + 2L)), is("fizz"));
+    }
+
+    @Ignore("For manual performance testing")
+    @Test
+    public void aPerformanceTest() throws Exception {
+        final FizzBuzzer fizzBuzzer = new FizzBuzzer();
+        final long start = System.currentTimeMillis();
+        final int numbers = 1000000;
+        for (long i = 0; i < numbers; i++) {
+            fizzBuzzer.evaluate(valueOf(i));
+        }
+        final long finish = System.currentTimeMillis();
+        System.out.println(String.format("Tested: %d in %d milliseconds", numbers, (finish - start)));
     }
 
 }
