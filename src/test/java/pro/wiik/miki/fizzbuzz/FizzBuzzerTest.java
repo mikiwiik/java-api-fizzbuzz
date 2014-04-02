@@ -14,12 +14,12 @@ public class FizzBuzzerTest {
         final FizzBuzzer fizzBuzzer = new FizzBuzzer();
         assertThat(fizzBuzzer.evaluate(valueOf(1L)), is("1"));
 
-        assertThat(fizzBuzzer.evaluate(valueOf(3L)), is("fizz"));
-        assertThat(fizzBuzzer.evaluate(valueOf(5L)), is("buzz"));
-        assertThat(fizzBuzzer.evaluate(valueOf(15L)), is("fizz buzz"));
+        assertThat(fizzBuzzer.evaluate(valueOf(3L)), is("Fizz"));
+        assertThat(fizzBuzzer.evaluate(valueOf(5L)), is("Buzz"));
+        assertThat(fizzBuzzer.evaluate(valueOf(15L)), is("FizzBuzz"));
 
         assertThat("Should support numbers larger than int max val",
-                fizzBuzzer.evaluate(valueOf(Integer.MAX_VALUE + 2L)), is("fizz"));
+                fizzBuzzer.evaluate(valueOf(Integer.MAX_VALUE + 2L)), is("Fizz"));
     }
 
     @Ignore("For manual performance testing")

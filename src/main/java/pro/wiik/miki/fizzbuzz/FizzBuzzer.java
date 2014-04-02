@@ -13,9 +13,9 @@ public class FizzBuzzer {
     private final static BigInteger three = BigInteger.valueOf(3L);
     private final static BigInteger five = BigInteger.valueOf(5L);
 
-    private static final String FIZZ_BUZZ = "fizz buzz";
-    private static final String FIZZ = "fizz";
-    private static final String BUZZ = "buzz";
+    private static final String FIZZ = "Fizz";
+    private static final String BUZZ = "Buzz";
+    private static final String FIZZ_BUZZ = FIZZ + BUZZ;
 
     @NotNull
     public String evaluate(@NotNull BigInteger number) {
