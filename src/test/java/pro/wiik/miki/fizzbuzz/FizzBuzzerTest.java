@@ -17,9 +17,12 @@ public class FizzBuzzerTest {
         assertThat(fizzBuzzer.evaluate(valueOf(3L)), is("Fizz"));
         assertThat(fizzBuzzer.evaluate(valueOf(5L)), is("Buzz"));
         assertThat(fizzBuzzer.evaluate(valueOf(15L)), is("FizzBuzz"));
+    }
 
+    @Test
+    public void ensureNumbersLargerThanIntMaxValueValueAreSupported() {
         assertThat("Should support numbers larger than int max val",
-                fizzBuzzer.evaluate(valueOf(Integer.MAX_VALUE + 2L)), is("Fizz"));
+                new FizzBuzzer().evaluate(valueOf(Integer.MAX_VALUE + 2L)), is("Fizz"));
     }
 
     @Ignore("For manual performance testing")
