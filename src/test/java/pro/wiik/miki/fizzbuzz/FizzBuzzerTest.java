@@ -16,6 +16,7 @@ public class FizzBuzzerTest {
 
         assertThat(fizzBuzzer.evaluate(valueOf(3L)), is("Fizz"));
         assertThat(fizzBuzzer.evaluate(valueOf(5L)), is("Buzz"));
+        assertThat(fizzBuzzer.evaluate(valueOf(7L)), is("7"));
         assertThat(fizzBuzzer.evaluate(valueOf(15L)), is("FizzBuzz"));
     }
 
