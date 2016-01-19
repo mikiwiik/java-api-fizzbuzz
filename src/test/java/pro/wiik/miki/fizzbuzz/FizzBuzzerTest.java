@@ -10,7 +10,7 @@ import static org.junit.Assert.assertThat;
 public class FizzBuzzerTest {
 
     @Test
-    public void simpleSmokeTest() throws Exception {
+    public void testKnownValues() throws Exception {
         final FizzBuzzer fizzBuzzer = new FizzBuzzer();
         assertThat(fizzBuzzer.evaluate(valueOf(1L)), is("1"));
 
