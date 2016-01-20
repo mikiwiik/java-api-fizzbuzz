@@ -26,6 +26,12 @@ public class FizzBuzzerTest {
                 new FizzBuzzer().evaluate(valueOf(Integer.MAX_VALUE + 2L)), is("Fizz"));
     }
 
+    @Test
+    public void ensureNegativeNumbersAreSupported() {
+        assertThat(new FizzBuzzer().evaluate(valueOf(-15L)), is("FizzBuzz"));
+        assertThat(new FizzBuzzer().evaluate(valueOf(-17L)), is("-17"));
+    }
+
     @Ignore("For manual performance testing")
     @Test
     public void aPerformanceTest() throws Exception {
