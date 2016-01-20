@@ -1,11 +1,13 @@
 package pro.wiik.miki.fizzbuzz;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@Configuration
-@ComponentScan("pro.wiik.miki.fizzbuzz")
-@EnableWebMvc
+@SpringBootApplication
 public class Configurator {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Configurator.class, args);
+    }
+
 }
