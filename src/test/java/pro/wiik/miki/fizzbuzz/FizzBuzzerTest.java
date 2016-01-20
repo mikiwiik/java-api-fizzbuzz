@@ -10,7 +10,7 @@ import static org.junit.Assert.assertThat;
 public class FizzBuzzerTest {
 
     @Test
-    public void testKnownValues() throws Exception {
+    public void knownValues() throws Exception {
         assertThat(new FizzBuzzer().evaluate(valueOf(1L)), is("1"));
         assertThat(new FizzBuzzer().evaluate(valueOf(3L)), is("Fizz"));
         assertThat(new FizzBuzzer().evaluate(valueOf(5L)), is("Buzz"));
@@ -19,20 +19,20 @@ public class FizzBuzzerTest {
     }
 
     @Test
-    public void ensureNumbersLargerThanIntMaxValueValueAreSupported() {
+    public void numberLargerThanIntMaxValue() {
         assertThat("Should support numbers larger than int max val",
                 new FizzBuzzer().evaluate(valueOf(Integer.MAX_VALUE + 2L)), is("Fizz"));
     }
 
     @Test
-    public void ensureNegativeNumbersAreSupported() {
+    public void negativeNumbers() {
         assertThat(new FizzBuzzer().evaluate(valueOf(-15L)), is("FizzBuzz"));
         assertThat(new FizzBuzzer().evaluate(valueOf(-17L)), is("-17"));
     }
 
     @Ignore("For manual performance testing")
     @Test
-    public void aPerformanceTest() throws Exception {
+    public void manualPerformanceTest() throws Exception {
         final FizzBuzzer fizzBuzzer = new FizzBuzzer();
         final long start = System.currentTimeMillis();
         final int numbers = 1000000;

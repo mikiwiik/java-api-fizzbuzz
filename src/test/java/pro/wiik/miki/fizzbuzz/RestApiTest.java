@@ -31,14 +31,14 @@ public class RestApiTest {
     }
 
     @Test
-    public void simpleSmokeTest() throws Exception {
+    public void knownFizzBuzz() throws Exception {
         mockMvc.perform(get("/15"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("FizzBuzz"));
     }
 
     @Test
-    public void testLargeNumber() throws Exception {
+    public void largeNumber() throws Exception {
         mockMvc.perform(get("/1234567890987654321"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Fizz"));
