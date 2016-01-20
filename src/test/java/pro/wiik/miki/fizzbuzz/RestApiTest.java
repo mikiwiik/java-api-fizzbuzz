@@ -43,4 +43,12 @@ public class RestApiTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("Fizz"));
     }
+
+    @Test
+    public void negativeNumber() throws Exception {
+        final Integer negativeNumber = -17;
+        mockMvc.perform(get("/" + negativeNumber))
+                .andExpect(status().isOk())
+                .andExpect(content().string(negativeNumber.toString()));
+    }
 }

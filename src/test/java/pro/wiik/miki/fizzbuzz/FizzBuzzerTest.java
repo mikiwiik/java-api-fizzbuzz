@@ -11,13 +11,11 @@ public class FizzBuzzerTest {
 
     @Test
     public void testKnownValues() throws Exception {
-        final FizzBuzzer fizzBuzzer = new FizzBuzzer();
-        assertThat(fizzBuzzer.evaluate(valueOf(1L)), is("1"));
-
-        assertThat(fizzBuzzer.evaluate(valueOf(3L)), is("Fizz"));
-        assertThat(fizzBuzzer.evaluate(valueOf(5L)), is("Buzz"));
-        assertThat(fizzBuzzer.evaluate(valueOf(7L)), is("7"));
-        assertThat(fizzBuzzer.evaluate(valueOf(15L)), is("FizzBuzz"));
+        assertThat(new FizzBuzzer().evaluate(valueOf(1L)), is("1"));
+        assertThat(new FizzBuzzer().evaluate(valueOf(3L)), is("Fizz"));
+        assertThat(new FizzBuzzer().evaluate(valueOf(5L)), is("Buzz"));
+        assertThat(new FizzBuzzer().evaluate(valueOf(7L)), is("7"));
+        assertThat(new FizzBuzzer().evaluate(valueOf(15L)), is("FizzBuzz"));
     }
 
     @Test
