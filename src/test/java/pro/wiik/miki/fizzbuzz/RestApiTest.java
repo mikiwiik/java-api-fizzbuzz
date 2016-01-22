@@ -51,4 +51,10 @@ public class RestApiTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(negativeNumber.toString()));
     }
+
+    @Test
+    public void nonNumberReturns400BadRequest() throws Exception {
+        mockMvc.perform(get("/foo"))
+                .andExpect(status().isBadRequest());
+    }
 }
