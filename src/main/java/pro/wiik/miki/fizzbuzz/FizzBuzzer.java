@@ -3,10 +3,12 @@ package pro.wiik.miki.fizzbuzz;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.concurrent.Immutable;
 import java.math.BigInteger;
 
 import static java.math.BigInteger.ZERO;
 
+@Immutable
 @Service
 public class FizzBuzzer {
 
