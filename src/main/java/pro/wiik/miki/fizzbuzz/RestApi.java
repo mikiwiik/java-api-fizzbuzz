@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.math.BigInteger;
 
+import static org.springframework.http.MediaType.TEXT_PLAIN_VALUE;
+
 @Controller
 @RequestMapping("/")
 public class RestApi {
@@ -16,7 +18,11 @@ public class RestApi {
     @Autowired
     FizzBuzzer fizzBuzzer;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{number}")
+    @RequestMapping(
+            method = RequestMethod.GET,
+            value = "/{number}",
+            produces = TEXT_PLAIN_VALUE
+    )
     @ResponseBody
     public String doFizzBuzz(@PathVariable("number") String number) {
         final BigInteger bigInt = new BigInteger(number);
