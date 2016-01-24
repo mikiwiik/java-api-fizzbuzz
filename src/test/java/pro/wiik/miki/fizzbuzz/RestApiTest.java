@@ -10,6 +10,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
 
+import static org.springframework.http.MediaType.TEXT_XML_VALUE;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -50,6 +51,12 @@ public class RestApiTest {
         mockMvc.perform(get("/" + negativeNumber))
                 .andExpect(status().isOk())
                 .andExpect(content().string(negativeNumber.toString()));
+    }
+
+    @Test
+    public void textXmlReturns406NotAcceptable() throws Exception {
+        mockMvc.perform(get("/15").accept(TEXT_XML_VALUE))
+                .andExpect(status().isNotAcceptable());
     }
 
     @Test
