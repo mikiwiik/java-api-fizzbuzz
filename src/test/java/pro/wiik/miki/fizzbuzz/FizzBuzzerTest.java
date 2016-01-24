@@ -11,6 +11,7 @@ public class FizzBuzzerTest {
 
     @Test
     public void knownValues() throws Exception {
+        assertThat(new FizzBuzzer().evaluate(valueOf(0L)), is("FizzBuzz"));
         assertThat(new FizzBuzzer().evaluate(valueOf(1L)), is("1"));
         assertThat(new FizzBuzzer().evaluate(valueOf(3L)), is("Fizz"));
         assertThat(new FizzBuzzer().evaluate(valueOf(5L)), is("Buzz"));
