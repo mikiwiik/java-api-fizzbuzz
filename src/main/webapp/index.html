@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/main.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
@@ -31,24 +33,23 @@
     </div>
 </nav>
 
-<div class="container">
+<div class="container" ng-app="fizzbuzz">
     <!-- Example row of columns -->
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-6 col-md-offset-3" ng-controller="RestCtrl as vm">
 
             <div class="panel panel-default" style="margin-top: 20px">
                 <div class="panel-heading">
                     <h3 class="panel-title">Previous tests</h3>
                 </div>
-                <div class="panel-body">
-                    <div>Number: 0, Result: FizzBuzz</div>
-                    <div>Number: 0, Result: FizzBuzz</div>
+                <div class="panel-body" ng-repeat="test in vm.tests">
+                    <div>Number: {{test.number}}, Result: {{test.result}}</div>
                 </div>
             </div>
 
-            <form>
+            <form ng-submit="vm.testNumber()">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="number to test"/>
+                    <input type="text" class="form-control" placeholder="number to test" ng-model="number"/>
                         <span class="input-group-btn">
                             <button type="submit" class="btn btn-success">Submit</button>
                         </span>
@@ -59,6 +60,6 @@
 </div>
 <!-- /container -->
 
-<script src="js/main.js"></script>
+<script src="js/fizzbuzz-tester.js"></script>
 </body>
 </html>
