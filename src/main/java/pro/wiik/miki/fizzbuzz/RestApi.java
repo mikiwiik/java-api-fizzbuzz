@@ -12,7 +12,7 @@ import java.math.BigInteger;
 import static org.springframework.http.MediaType.TEXT_PLAIN_VALUE;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/api")
 public class RestApi {
 
     @Autowired

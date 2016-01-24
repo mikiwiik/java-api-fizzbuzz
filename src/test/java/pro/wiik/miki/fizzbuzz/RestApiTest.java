@@ -33,14 +33,14 @@ public class RestApiTest {
 
     @Test
     public void knownFizzBuzz() throws Exception {
-        mockMvc.perform(get("/15"))
+        mockMvc.perform(get("/api/15"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("FizzBuzz"));
     }
 
     @Test
     public void largeNumber() throws Exception {
-        mockMvc.perform(get("/1234567890987654321"))
+        mockMvc.perform(get("/api/1234567890987654321"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Fizz"));
     }
@@ -48,20 +48,20 @@ public class RestApiTest {
     @Test
     public void negativeNumber() throws Exception {
         final Integer negativeNumber = -17;
-        mockMvc.perform(get("/" + negativeNumber))
+        mockMvc.perform(get("/api/" + negativeNumber))
                 .andExpect(status().isOk())
                 .andExpect(content().string(negativeNumber.toString()));
     }
 
     @Test
     public void textXmlReturns406NotAcceptable() throws Exception {
-        mockMvc.perform(get("/15").accept(TEXT_XML_VALUE))
+        mockMvc.perform(get("/api/15").accept(TEXT_XML_VALUE))
                 .andExpect(status().isNotAcceptable());
     }
 
     @Test
     public void nonNumberReturns400BadRequest() throws Exception {
-        mockMvc.perform(get("/foo"))
+        mockMvc.perform(get("/api/foo"))
                 .andExpect(status().isBadRequest());
     }
 }
