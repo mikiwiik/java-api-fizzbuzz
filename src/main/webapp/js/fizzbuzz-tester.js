@@ -4,11 +4,10 @@
     angular.module('fizzbuzz', [])
         .controller('RestCtrl', RestCtrl);
 
-    function RestCtrl($http, $log, $scope) {
+    function RestCtrl($http, $log) {
         var vm = this;
         vm.tests = [ ];
-        vm.testNumber = function () {
-            var numberToTest = $scope.number;
+        vm.testNumber = function (numberToTest) {
             $log.debug("About to test " + numberToTest);
             $http({
                 method: 'GET',
