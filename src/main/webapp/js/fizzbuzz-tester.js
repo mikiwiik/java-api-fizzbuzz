@@ -4,7 +4,7 @@
     angular.module('fizzbuzz', [])
         .controller('RestCtrl', RestCtrl);
 
-    function RestCtrl($http, $log) {
+    function RestCtrl($http, $log, $scope) {
         var vm = this;
         vm.tests = [ ];
         vm.testNumber = function (numberToTest) {
@@ -19,6 +19,9 @@
                     result: response.data
                 };
                 vm.tests.push(testResult);
+                // Clear the form
+                vm.number = null;
+                $scope.testerForm.$setPristine(true);
             });
         };
     }

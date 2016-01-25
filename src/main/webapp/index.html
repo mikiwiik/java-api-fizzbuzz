@@ -47,8 +47,8 @@
                 </div>
             </div>
 
-            <form ng-submit="vm.testNumber(vm.number)">
-                <div class="input-group">
+            <form name="testerForm" ng-submit="vm.testNumber(vm.number)">
+            <div class="input-group">
                     <input type="text" class="form-control" placeholder="number to test" ng-model="vm.number"/>
                         <span class="input-group-btn">
                             <button type="submit" class="btn btn-success">Submit</button>
