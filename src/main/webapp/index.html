@@ -36,13 +36,12 @@
 </nav>
 
 <div class="container" ng-app="fizzbuzz-tester">
-    <!-- Example row of columns -->
     <div class="row">
         <div class="col-md-6 col-md-offset-3" ng-controller="RestCtrl as vm">
 
             <div class="panel panel-default" style="margin-top: 20px">
                 <div class="panel-heading">
-                <h3 class="panel-title">Previous tests</h3>
+                    <h3 class="panel-title">Previous tests</h3>
                 </div>
                 <div class="panel-body" ng-repeat="test in vm.tests">
                     <div>Number: {{test.number}}, Result: {{test.result}}</div>
@@ -61,7 +60,6 @@
         </div>
     </div>
 </div>
-<!-- /container -->
 
 <script src="js/fizzbuzz-tester.js"></script>
 </body>
