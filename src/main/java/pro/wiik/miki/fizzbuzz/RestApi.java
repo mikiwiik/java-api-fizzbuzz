@@ -29,10 +29,9 @@ public class RestApi {
     @ResponseBody
     public String doFizzBuzz(@PathVariable("number") String number) {
         final BigInteger bigInt = new BigInteger(number);
-        final String result = fizzBuzzer.evaluate(bigInt);
-        // TODO: Proper JSON serializable result
+        final Result result = fizzBuzzer.evaluate(bigInt);
         messagingTemplate.convertAndSend("/numbers/new", result);
-        return result;
+        return result.getFizzBuzz();
     }
 
     @ExceptionHandler(NumberFormatException.class)

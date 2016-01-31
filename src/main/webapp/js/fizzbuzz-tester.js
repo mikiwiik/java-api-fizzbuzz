@@ -39,11 +39,11 @@
                 stompClient.subscribe('/numbers/new', function (response) {
                     $log.debug("Received number: " + JSON.stringify(response));
                     $scope.$apply(function () {
-                        var testResult = {
-                            number: "TODO",
-                            result: response.body
-                        };
-                        vm.tests.push(testResult);
+                        var body = JSON.parse(response.body);
+                        vm.tests.push({
+                            number: body.number,
+                            result: body.fizzBuzz
+                        });
                     });
                 });
             });

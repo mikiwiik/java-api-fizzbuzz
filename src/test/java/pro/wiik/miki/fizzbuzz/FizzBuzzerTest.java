@@ -11,24 +11,24 @@ public class FizzBuzzerTest {
 
     @Test
     public void knownValues() throws Exception {
-        assertThat(new FizzBuzzer().evaluate(valueOf(0L)), is("FizzBuzz"));
-        assertThat(new FizzBuzzer().evaluate(valueOf(1L)), is("1"));
-        assertThat(new FizzBuzzer().evaluate(valueOf(3L)), is("Fizz"));
-        assertThat(new FizzBuzzer().evaluate(valueOf(5L)), is("Buzz"));
-        assertThat(new FizzBuzzer().evaluate(valueOf(7L)), is("7"));
-        assertThat(new FizzBuzzer().evaluate(valueOf(15L)), is("FizzBuzz"));
+        assertThat(new FizzBuzzer().evaluate(valueOf(0L)).getFizzBuzz(), is("FizzBuzz"));
+        assertThat(new FizzBuzzer().evaluate(valueOf(1L)).getFizzBuzz(), is("1"));
+        assertThat(new FizzBuzzer().evaluate(valueOf(3L)).getFizzBuzz(), is("Fizz"));
+        assertThat(new FizzBuzzer().evaluate(valueOf(5L)).getFizzBuzz(), is("Buzz"));
+        assertThat(new FizzBuzzer().evaluate(valueOf(7L)).getFizzBuzz(), is("7"));
+        assertThat(new FizzBuzzer().evaluate(valueOf(15L)).getFizzBuzz(), is("FizzBuzz"));
     }
 
     @Test
     public void numberLargerThanIntMaxValue() {
         assertThat("Should support numbers larger than int max val",
-                new FizzBuzzer().evaluate(valueOf(Integer.MAX_VALUE + 2L)), is("Fizz"));
+                new FizzBuzzer().evaluate(valueOf(Integer.MAX_VALUE + 2L)).getFizzBuzz(), is("Fizz"));
     }
 
     @Test
     public void negativeNumbers() {
-        assertThat(new FizzBuzzer().evaluate(valueOf(-15L)), is("FizzBuzz"));
-        assertThat(new FizzBuzzer().evaluate(valueOf(-17L)), is("-17"));
+        assertThat(new FizzBuzzer().evaluate(valueOf(-15L)).getFizzBuzz(), is("FizzBuzz"));
+        assertThat(new FizzBuzzer().evaluate(valueOf(-17L)).getFizzBuzz(), is("-17"));
     }
 
     @Ignore("For manual performance testing")
