@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Does it Fizz, will it Buzz?</title>
+    <title>Fizz Buzz test results</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -30,39 +30,29 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Does it Fizz, will it Buzz?</a>
+            <a class="navbar-brand" href="#">Fizz Buzz test results</a>
         </div>
     </div>
 </nav>
 
-<div class="container" ng-app="fizzbuzz-tester">
+<div class="container" ng-app="fizzbuzz-results">
     <!-- Example row of columns -->
     <div class="row">
-        <div class="col-md-6 col-md-offset-3" ng-controller="RestCtrl as vm">
+        <div class="col-md-6 col-md-offset-3" ng-controller="StompCtrl as vm">
 
             <div class="panel panel-default" style="margin-top: 20px">
                 <div class="panel-heading">
-                <h3 class="panel-title">Previous tests</h3>
+                    <h3 class="panel-title">Everyones tests</h3>
                 </div>
                 <div class="panel-body" ng-repeat="test in vm.tests">
                     <div>Number: {{test.number}}, Result: {{test.result}}</div>
                 </div>
             </div>
-
-            <form name="testerForm" ng-submit="vm.testNumber(vm.number)">
-                <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Integer to test" ng-model="vm.number"/>
-                        <span class="input-group-btn">
-                            <button type="submit" class="btn btn-success">Submit</button>
-                        </span>
-                </div>
-            </form>
-            <a href="results.html">View the result stream</a>
         </div>
     </div>
 </div>
 <!-- /container -->
 
-<script src="js/fizzbuzz-tester.js"></script>
+<script src="js/fizzbuzz-results.js"></script>
 </body>
 </html>
