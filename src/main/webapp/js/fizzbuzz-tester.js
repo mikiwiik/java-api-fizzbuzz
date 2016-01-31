@@ -2,7 +2,8 @@
     'use strict';
 
     angular.module('fizzbuzz', [])
-        .controller('RestCtrl', RestCtrl);
+        .controller('RestCtrl', RestCtrl)
+        .controller('StompCtrl', StompCtrl);
 
     function RestCtrl($http, $log, $scope) {
         var vm = this;
@@ -24,6 +25,29 @@
                 $scope.testerForm.$setPristine(true);
             });
         };
+    }
+
+    function StompCtrl($http, $log) {
+        var vm = this;
+        vm.tests = [ ];
+
+        vm.connect = function () {
+            var socket = new SockJS('/stomp');
+            var stompClient = Stomp.over(socket);
+            stompClient.connect({}, function (frame) {
+                $log.debug('Opening SockJS connection: ' + frame);
+                stompClient.subscribe('/numbers/new', function (response) {
+                    $log.debug("Received number: " + JSON.stringify(response));
+                    var testResult = {
+                        number: "TODO",
+                        result: response.body
+                    };
+                    vm.tests.push(testResult);
+                });
+            });
+        };
+
+        vm.connect();
     }
 
 })();

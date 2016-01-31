@@ -2,6 +2,7 @@ package pro.wiik.miki.fizzbuzz;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,8 @@ public class RestApi {
 
     @Autowired
     FizzBuzzer fizzBuzzer;
+    @Autowired
+    SimpMessagingTemplate messagingTemplate;
 
     @RequestMapping(
             method = RequestMethod.GET,
@@ -26,7 +29,10 @@ public class RestApi {
     @ResponseBody
     public String doFizzBuzz(@PathVariable("number") String number) {
         final BigInteger bigInt = new BigInteger(number);
-        return fizzBuzzer.evaluate(bigInt);
+        final String result = fizzBuzzer.evaluate(bigInt);
+        // TODO: Proper JSON serializable result
+        messagingTemplate.convertAndSend("/numbers/new", result);
+        return result;
     }
 
     @ExceptionHandler(NumberFormatException.class)
