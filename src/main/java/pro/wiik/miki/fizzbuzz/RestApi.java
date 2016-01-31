@@ -29,7 +29,7 @@ public class RestApi {
     @ResponseBody
     public String doFizzBuzz(@PathVariable("number") String number) {
         final BigInteger bigInt = new BigInteger(number);
-        final Result result = fizzBuzzer.evaluate(bigInt);
+        final TestResult result = fizzBuzzer.evaluate(bigInt);
         messagingTemplate.convertAndSend("/numbers/new", result);
         return result.getFizzBuzz();
     }

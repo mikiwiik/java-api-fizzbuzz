@@ -7,7 +7,7 @@ import javax.annotation.concurrent.Immutable;
 import java.math.BigInteger;
 
 import static java.math.BigInteger.ZERO;
-import static pro.wiik.miki.fizzbuzz.Result.*;
+import static pro.wiik.miki.fizzbuzz.TestResult.*;
 
 @Immutable
 @Service
@@ -17,7 +17,7 @@ public class FizzBuzzer {
     private final static BigInteger five = BigInteger.valueOf(5L);
 
     @NotNull
-    public Result evaluate(@NotNull BigInteger number) {
+    public TestResult evaluate(@NotNull BigInteger number) {
         if (number.mod(three).equals(ZERO)) {
             if (number.mod(five).equals(ZERO)) {
                 return fizzBuzz(number);
