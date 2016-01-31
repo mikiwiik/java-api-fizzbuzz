@@ -27,7 +27,7 @@
         };
     }
 
-    function StompCtrl($http, $log) {
+    function StompCtrl($log, $scope) {
         var vm = this;
         vm.tests = [ ];
 
@@ -38,11 +38,13 @@
                 $log.debug('Opening SockJS connection: ' + frame);
                 stompClient.subscribe('/numbers/new', function (response) {
                     $log.debug("Received number: " + JSON.stringify(response));
-                    var testResult = {
-                        number: "TODO",
-                        result: response.body
-                    };
-                    vm.tests.push(testResult);
+                    $scope.$apply(function () {
+                        var testResult = {
+                            number: "TODO",
+                            result: response.body
+                        };
+                        vm.tests.push(testResult);
+                    });
                 });
             });
         };
