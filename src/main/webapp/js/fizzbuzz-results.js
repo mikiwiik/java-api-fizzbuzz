@@ -8,6 +8,13 @@
         var vm = this;
         vm.tests = [ ];
 
+        var addResult = function (number, fizzBuzz) {
+            vm.tests.push({
+                number: number,
+                result: fizzBuzz
+            });
+        };
+
         vm.connect = function () {
             var socket = new SockJS('/stomp');
             var stompClient = Stomp.over(socket);
@@ -17,10 +24,7 @@
                     $log.debug("Received number: " + JSON.stringify(response));
                     $scope.$apply(function () {
                         var body = JSON.parse(response.body);
-                        vm.tests.push({
-                            number: body.number,
-                            result: body.fizzBuzz
-                        });
+                        addResult(body.number, body.fizzBuzz);
                     });
                 });
             });
