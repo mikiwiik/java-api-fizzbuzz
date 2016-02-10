@@ -15,7 +15,7 @@
             });
         };
 
-        vm.connect = function () {
+        var connect = function () {
             var socket = new SockJS('/stomp');
             var stompClient = Stomp.over(socket);
             stompClient.connect({}, function (frame) {
@@ -30,7 +30,7 @@
             });
         };
 
-        vm.connect();
+        connect();
     }
 
 })();
