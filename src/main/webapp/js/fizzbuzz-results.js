@@ -2,7 +2,16 @@
     'use strict';
 
     angular.module('fizzbuzz-results', [])
-        .controller('StompCtrl', StompCtrl);
+        .controller('StompCtrl', StompCtrl)
+        .directive('latestresults', function () {
+            return {
+                restrict: 'E',
+                replace: true,
+                controller: 'StompCtrl',
+                controllerAs: 'vm',
+                templateUrl: '/js/latestResults.tpl.html'
+            }
+        });
 
     function StompCtrl($log, $scope) {
         var vm = this;
