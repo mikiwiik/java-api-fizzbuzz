@@ -8,14 +8,14 @@
         var vm = this;
         vm.tests = [ ];
 
-        var addResult = function (number, fizzBuzz) {
+        function addResult(number, fizzBuzz) {
             vm.tests.push({
                 number: number,
                 result: fizzBuzz
             });
-        };
+        }
 
-        var connect = function () {
+        function connect() {
             var socket = new SockJS('/stomp');
             var stompClient = Stomp.over(socket);
             stompClient.connect({}, function (frame) {
@@ -28,7 +28,7 @@
                     });
                 });
             });
-        };
+        }
 
         connect();
     }
