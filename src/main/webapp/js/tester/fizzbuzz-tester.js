@@ -1,7 +1,9 @@
 (function () {
     'use strict';
 
-    angular.module('fizzbuzz-tester', [])
+    angular.module('fizzbuzz-tester', [
+        'fizzbuzz-tester.directives'
+    ])
         .controller('RestCtrl', RestCtrl);
 
     function RestCtrl($http, $log, $scope) {
