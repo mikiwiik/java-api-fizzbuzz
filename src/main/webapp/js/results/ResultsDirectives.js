@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('fizzbuzz-results.directives', [])
-        .directive('latestresults', function () {
+        .directive('latestResults', function () {
             return {
                 restrict: 'E',
                 replace: true,
