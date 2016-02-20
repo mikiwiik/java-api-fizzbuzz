@@ -3,6 +3,9 @@
 
     function LatestResults() {
         return {
+            scope: {
+                resultsHeading: '@'
+            },
             restrict: 'E',
             replace: true,
             controller: 'StompCtrl',
