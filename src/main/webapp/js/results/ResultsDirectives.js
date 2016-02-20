@@ -8,7 +8,7 @@
                 replace: true,
                 controller: 'StompCtrl',
                 controllerAs: 'vm',
-                templateUrl: '/js/latestResults.tpl.html'
+                templateUrl: '/js/results/latestResults.tpl.html'
             }
         });
 
