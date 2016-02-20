@@ -1,4 +1,4 @@
-(function () {
+(function (angular) {
     'use strict';
 
     angular.module('fizzbuzz-results', [])
@@ -42,4 +42,4 @@
         connect();
     }
 
-})();
+}(angular));
