@@ -4,7 +4,15 @@ module.exports = function (config) {
         basePath: './',
 
         files: [
-            'src/test/js/**/*.js'
+            // Libs
+            'src/main/webapp/js/lib/angular.js',
+            'src/test/js/lib/angular-mocks.js',
+
+            // App
+            'src/main/webapp/js/tester/*.js',
+
+            // Tests
+            'src/test/js/*.js'
         ],
         autoWatch: true,
 
