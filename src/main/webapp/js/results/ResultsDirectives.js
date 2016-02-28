@@ -19,7 +19,7 @@ function LatestResults() {
             '      <div>{{test.number}}:{{test.result}}</div>',
             '    </div>',
             '  </div>',
-            '</div>']
+            '</div>'].join('')
     }
 }
 angular.module('fizzbuzz-results.directives', [])
