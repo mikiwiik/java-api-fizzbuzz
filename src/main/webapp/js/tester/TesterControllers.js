@@ -1,8 +1,7 @@
 'use strict';
 
-function RestCtrl($http, $log, $scope) {
+function RestCtrl($http, $log, $scope, $controller) {
     var vm = this;
-    vm.tests = [ ];
 
     function testNumber(numberToTest) {
         $log.debug("About to test " + numberToTest);
@@ -11,11 +10,7 @@ function RestCtrl($http, $log, $scope) {
             url: '/api/' + numberToTest
         }).then(function (response) {
             $log.debug("Handling result " + JSON.stringify(response));
-            var testResult = {
-                number: numberToTest,
-                result: response.data
-            };
-            vm.tests.push(testResult);
+            vm.addResult(numberToTest, response.data);
             // Clear the form
             vm.number = null;
             $scope.testerForm.$setPristine(true);
@@ -23,6 +18,7 @@ function RestCtrl($http, $log, $scope) {
     }
 
     vm.testNumber = testNumber;
+    angular.extend(vm, $controller('BaseCtrl', {$scope: $scope}));
 }
 
 angular.module('fizzbuzz-tester.controllers', [])
