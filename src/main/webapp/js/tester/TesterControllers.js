@@ -3,7 +3,8 @@
 function RestCtrl($http, $log, $scope) {
     var vm = this;
     vm.tests = [ ];
-    vm.testNumber = function (numberToTest) {
+
+    function testNumber(numberToTest) {
         $log.debug("About to test " + numberToTest);
         $http({
             method: 'GET',
@@ -19,7 +20,9 @@ function RestCtrl($http, $log, $scope) {
             vm.number = null;
             $scope.testerForm.$setPristine(true);
         });
-    };
+    }
+
+    vm.testNumber = testNumber;
 }
 
 angular.module('fizzbuzz-tester.controllers', [])
