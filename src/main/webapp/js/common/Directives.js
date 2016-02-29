@@ -7,7 +7,7 @@ function LatestResults() {
         },
         restrict: 'E',
         replace: true,
-        controller: 'StompCtrl',
+        controller: 'ResultCtrl',
         controllerAs: 'vm',
         template: [
             '<div class="col-md-6 col-md-offset-3">',
@@ -22,5 +22,5 @@ function LatestResults() {
             '</div>'].join('')
     }
 }
-angular.module('fizzbuzz-results.directives', [])
+angular.module('fizzbuzz.directives', [])
     .directive('latestResults', LatestResults);

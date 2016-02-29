@@ -6,6 +6,7 @@ module.exports = function (config) {
         files: [
             // App
             'src/main/webapp/js/lib/angular.js',
+            'src/main/webapp/js/common/*.js',
             'src/main/webapp/js/results/*.js',
             'src/main/webapp/js/tester/*.js',
 

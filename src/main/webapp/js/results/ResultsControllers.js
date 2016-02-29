@@ -23,4 +23,4 @@ function StompCtrl($log, $scope, $controller) {
 }
 
 angular.module('fizzbuzz-results.controllers', [])
-    .controller('StompCtrl', StompCtrl);
+    .controller('ResultCtrl', StompCtrl);

@@ -4,9 +4,9 @@ describe('latestResults directive', function () {
 
     var $scope, $compile;
 
-    beforeEach(module('fizzbuzz-results.directives', function ($provide, $controllerProvider) {
+    beforeEach(module('fizzbuzz.directives', function ($provide, $controllerProvider) {
             // Mock StompCtrl
-            $controllerProvider.register('StompCtrl', function ($scope) {
+            $controllerProvider.register('ResultCtrl', function ($scope) {
                 return {}
             });
         })
