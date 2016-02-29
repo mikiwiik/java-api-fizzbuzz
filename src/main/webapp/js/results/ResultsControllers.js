@@ -1,15 +1,7 @@
 'use strict';
 
-function StompCtrl($log, $scope) {
+function StompCtrl($log, $scope, $controller) {
     var vm = this;
-    vm.tests = [ ];
-
-    function addResult(number, fizzBuzz) {
-        vm.tests.push({
-            number: number,
-            result: fizzBuzz
-        });
-    }
 
     function connect() {
         var socket = new SockJS('/stomp');
@@ -20,12 +12,13 @@ function StompCtrl($log, $scope) {
                 $log.debug("Received number: " + JSON.stringify(response));
                 $scope.$apply(function () {
                     var body = JSON.parse(response.body);
-                    addResult(body.number, body.fizzBuzz);
+                    vm.addResult(body.number, body.fizzBuzz);
                 });
             });
         });
     }
 
+    angular.extend(vm, $controller('BaseCtrl', {$scope: $scope}));
     connect();
 }
 
