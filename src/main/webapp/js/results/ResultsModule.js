@@ -2,6 +2,6 @@
 
 angular.module('fizzbuzz-results', [
     'fizzbuzz.controllers',
-    'fizzbuzz-results.controllers',
-    'fizzbuzz.directives'
+    'fizzbuzz.directives',
+    'fizzbuzz-results.controllers'
 ]);
