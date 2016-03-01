@@ -37,17 +37,8 @@
 
 <div class="container" ng-app="fizzbuzz-tester">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3" ng-controller="RestCtrl as vm">
-
-            <div class="panel panel-default" style="margin-top: 20px">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Previous tests</h3>
-                </div>
-                <div class="panel-body" ng-repeat="test in vm.tests">
-                    <div>Number: {{test.number}}, Result: {{test.result}}</div>
-                </div>
-            </div>
-
+        <div class="col-md-6 col-md-offset-3" style="margin-top: 20px">
+            <data-latest-results data-results-heading="Previous tests"></data-latest-results>
             <data-tester-form></data-tester-form>
             <a href="results.html">View the result stream</a>
         </div>
@@ -55,6 +46,7 @@
 </div>
 
 <script src="js/common/Controllers.js"></script>
+<script src="js/common/Directives.js"></script>
 <script src="js/tester/TesterModule.js"></script>
 <script src="js/tester/TesterControllers.js"></script>
 <script src="js/tester/TesterDirectives.js"></script>

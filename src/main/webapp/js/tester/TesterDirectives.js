@@ -4,7 +4,7 @@ function TesterForm() {
     return {
         restrict: 'E',
         replace: true,
-        controller: 'RestCtrl',
+        controller: 'ResultCtrl',
         controllerAs: 'vm',
         template: [
             '<form name="testerForm" ng-submit="vm.testNumber(vm.number)">',

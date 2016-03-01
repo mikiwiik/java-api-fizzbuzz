@@ -22,4 +22,4 @@ function RestCtrl($http, $log, $scope, $controller) {
 }
 
 angular.module('fizzbuzz-tester.controllers', [])
-    .controller('RestCtrl', RestCtrl);
+    .controller('ResultCtrl', RestCtrl);
