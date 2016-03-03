@@ -8,8 +8,9 @@ function TesterForm() {
         controllerAs: 'vm',
         template: [
             '<form name="testerForm" ng-submit="vm.testNumber(vm.number)">',
-            '  <div class="input-group">',
-            '    <input type="number" required class="form-control" placeholder="Integer to test" ng-model="vm.number"/>',
+            '   <div class="input-group">',
+            '       <input type="text" required pattern="-?[0-9]+"',
+            '           class="form-control" placeholder="Integer to test" ng-model="vm.number"/>',
             '    <span class="input-group-btn">',
             '        <button type="submit" class="btn btn-success">Submit</button>',
             '    </span>',
