@@ -98,6 +98,22 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
             </plugin>
+            <plugin>
+                <groupId>com.kelveden</groupId>
+                <artifactId>maven-karma-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>start</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <karmaExecutable>${basedir}/node_modules/.bin/karma</karmaExecutable>
+                    <browsers>PhantomJS</browsers>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
