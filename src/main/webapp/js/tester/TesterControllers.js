@@ -1,6 +1,6 @@
 'use strict';
 
-function RestCtrl($http, $log, $scope, $controller) {
+function TesterController($http, $log, $scope, $controller) {
     var vm = this;
 
     function testNumber(numberToTest) {
@@ -22,4 +22,4 @@ function RestCtrl($http, $log, $scope, $controller) {
 }
 
 angular.module('fizzbuzz-tester.controllers', [])
-    .controller('ResultCtrl', RestCtrl);
+    .controller('ResultCtrl', TesterController);
