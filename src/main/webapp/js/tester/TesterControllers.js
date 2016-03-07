@@ -1,20 +1,17 @@
 'use strict';
 
-function TesterController($http, $log, $scope, $controller) {
+function TesterController(restApi, $scope, $controller) {
     var vm = this;
 
     function testNumber(numberToTest) {
-        $log.debug("About to test " + numberToTest);
-        $http({
-            method: 'GET',
-            url: '/api/' + numberToTest
-        }).then(function (response) {
-            $log.debug("Handling result " + JSON.stringify(response));
-            vm.addResult(numberToTest, response.data);
-            // Clear the form
-            vm.number = null;
-            $scope.testerForm.$setPristine(true);
-        });
+        restApi.getNumber(numberToTest)
+            .then(function (response) {
+                $log.debug("Handling result " + JSON.stringify(response));
+                vm.addResult(numberToTest, response.data);
+                // Clear the form
+                vm.number = null;
+                $scope.testerForm.$setPristine(true);
+            });
     }
 
     vm.testNumber = testNumber;
@@ -22,4 +19,4 @@ function TesterController($http, $log, $scope, $controller) {
 }
 
 angular.module('fizzbuzz-tester.controllers', [])
-    .controller('ResultCtrl', TesterController);
+    .controller('ResultCtrl', ['restApi', '$scope', '$controller', TesterController]);
