@@ -1,0 +1,2 @@
+# Omitted %JAVA_OPTS% for the time being
+web: java -cp target\classes\;target\dependency\* pro.wiik.miki.fizzbuzz.Configurator
