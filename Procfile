@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* pro.wiik.miki.fizzbuzz.Configurator
+web: java $JAVA_OPTS -jar target/API.jar
