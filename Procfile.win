@@ -1,2 +1,2 @@
 # Omitted %JAVA_OPTS% for the time being
-web: java -Dserver.port=$PORT -jar target/API.jar
+web: java -Dserver.port=$PORT -jar target/fizzbuzzer.jar

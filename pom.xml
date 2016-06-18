@@ -82,7 +82,7 @@
     </dependencies>
 
     <build>
-        <finalName>API</finalName>
+        <finalName>fizzbuzzer</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
