@@ -83,6 +83,13 @@
 
     <build>
         <finalName>fizzbuzzer</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/webapp</directory>
+                <!-- NOTE: Spring Boot does not work with static content in just root expects static content -->
+                <targetPath>static</targetPath>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
